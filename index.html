@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Vedika's Magical Birthday 🎀</title>
+
+<style>
+
+/* =========================
+   BASIC
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Georgia, "Times New Roman", serif;
+    background:
+        radial-gradient(circle at top, #fff8fc, #ffddea 45%, #f9b8d0);
+    color: #713b55;
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   FLOATING BACKGROUND
+========================= */
+
+.floating {
+    position: fixed;
+    bottom: -60px;
+    pointer-events: none;
+    animation: floatUp linear infinite;
+    z-index: 1;
+    opacity: 0.8;
+}
+
+@keyframes floatUp {
+
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-115vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.container {
+    position: relative;
+    z-index: 5;
+    max-width: 900px;
+    margin: auto;
+    padding: 35px 18px 60px;
+    text-align: center;
+}
+
+
+/* =========================
+   OPENING
+========================= */
+
+.top-title {
+    animation: fadeDown 1.3s ease;
+}
+
+.small-line {
+    font-size: 15px;
+    letter-spacing: 3px;
+    color: #a7446d;
+}
+
+h1 {
+    margin: 8px 0;
+    font-size: clamp(38px, 8vw, 72px);
+    color: #b83268;
+    text-shadow: 0 4px 15px rgba(184,50,104,0.2);
+}
+
+.subtitle {
+    font-size: 20px;
+    color: #7e3c58;
+}
+
+@keyframes fadeDown {
+
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================
+   PHOTO
+========================= */
+
+.photo-area {
+    margin: 30px auto;
+    position: relative;
+    width: min(340px, 90vw);
+}
+
+.baby-photo {
+    width: 260px;
+    height: 300px;
+    object-fit: cover;
+
+    border-radius: 50% 50% 45% 45%;
+
+    border: 8px solid white;
+
+    box-shadow:
+        0 0 0 5px #f2a0bd,
+        0 15px 40px rgba(112,40,72,0.25);
+
+    animation: babyFloat 4s ease-in-out infinite;
+}
+
+@keyframes babyFloat {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+
+/* =========================
+   NAME + DOB
+========================= */
+
+.info-card {
+    margin: 25px auto;
+    max-width: 500px;
+    padding: 22px;
+
+    background: rgba(255,255,255,0.65);
+
+    border: 1px solid rgba(255,255,255,0.9);
+
+    border-radius: 28px;
+
+    box-shadow: 0 10px 35px rgba(112,40,72,0.12);
+
+    backdrop-filter: blur(8px);
+}
+
+.info-card h2 {
+    margin: 0 0 10px;
+    color: #b83268;
+    font-size: 29px;
+}
+
+.dob {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.bua-line {
+    margin-top: 8px;
+    font-size: 17px;
+    color: #a43c68;
+}
+
+
+/* =========================
+   LIVE CLOCK
+========================= */
+
+.clock-box {
+    margin: 30px auto;
+    width: 180px;
+    height: 180px;
+
+    border-radius: 50%;
+
+    background: radial-gradient(circle, white, #ffe7f0);
+
+    border: 8px solid #e3a0ba;
+
+    box-shadow:
+        0 0 0 5px #fff,
+        0 12px 30px rgba(100,30,60,0.2);
+
+    position: relative;
+}
+
+.clock-number {
+    position: absolute;
+    font-weight: bold;
+    color: #7c3453;
+}
+
+.n12 {
+    top: 9px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.n3 {
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.n6 {
+    bottom: 9px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.n9 {
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.hand {
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    transform-origin: bottom center;
+    border-radius: 10px;
+}
+
+.hour-hand {
+    width: 6px;
+    height: 45px;
+    background: #57243c;
+}
+
+.minute-hand {
+    width: 4px;
+    height: 60px;
+    background: #b83268;
+}
+
+.second-hand {
+    width: 2px;
+    height: 70px;
+    background: #ff326f;
+}
+
+.clock-center {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #b83268;
+    border: 2px solid white;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+}
+
+.digital-time {
+    margin-top: 15px;
+    font-family: monospace;
+    font-size: 23px;
+    letter-spacing: 3px;
+    font-weight: bold;
+    color: #7d3152;
+}
+
+
+/* =========================
+   SURPRISE BUTTON
+========================= */
+
+.surprise-button {
+    margin: 25px 0;
+
+    border: none;
+
+    padding: 16px 30px;
+
+    border-radius: 40px;
+
+    background: linear-gradient(
+        135deg,
+        #b83268,
+        #f477a4
+    );
+
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 20px rgba(184,50,104,0.3);
+
+    transition: 0.3s;
+}
+
+.surprise-button:hover {
+    transform: translateY(-4px) scale(1.04);
+}
+
+
+/* =========================
+   SURPRISE CARD
+========================= */
+
+.card-wrapper {
+    display: none;
+    margin: 30px auto;
+    animation: cardOpen 0.8s ease;
+}
+
+@keyframes cardOpen {
+
+    from {
+        opacity: 0;
+        transform: scale(0.7) rotate(-3deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+    }
+}
+
+.birthday-card {
+    max-width: 580px;
+    margin: auto;
+
+    padding: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fffafd,
+            #ffe8f2
+        );
+
+    border-radius: 30px;
+
+    border: 3px solid #e8a0bb;
+
+    box-shadow:
+        0 20px 45px rgba(105,30,65,0.2);
+
+    position: relative;
+}
+
+.card-photo {
+    width: 150px;
+    height: 150px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 6px solid white;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+
+    margin-bottom: 12px;
+}
+
+.birthday-card h2 {
+    color: #b83268;
+    font-size: 30px;
+}
+
+.message {
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.signature {
+    margin-top: 20px;
+    font-size: 20px;
+    color: #a33161;
+    font-weight: bold;
+}
+
+
+/* =========================
+   SECRET MESSAGE
+========================= */
+
+.secret-button {
+    border: none;
+
+    padding: 12px 20px;
+
+    border-radius: 25px;
+
+    background: #fff;
+
+    color: #b83268;
+
+    border: 2px solid #e28aaa;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    font-weight: bold;
+}
+
+.secret-message {
+    display: none;
+
+    margin-top: 18px;
+
+    padding: 18px;
+
+    border-radius: 20px;
+
+    background: rgba(255,255,255,0.85);
+
+    border: 2px dashed #d86f96;
+
+    line-height: 1.7;
+
+    animation: secretOpen 0.7s ease;
+}
+
+@keyframes secretOpen {
+
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* OPENING SCREEN */
+#openingScreen {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: linear-gradient(135deg, #ffd6e7, #e8d5ff, #fff0f7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.opening-content {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 45px 30px;
+    border-radius: 30px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+    animation: openingPop 1s ease;
+}
+
+.opening-crown {
+    font-size: 65px;
+    animation: crownBounce 1.5s infinite;
+}
+
+.opening-content h1 {
+    color: #d63384;
+    font-size: 32px;
+    margin: 15px 0;
+}
+
+.opening-content p {
+    color: #7a4160;
+    font-size: 18px;
+}
+
+.opening-content button {
+    margin-top: 20px;
+    padding: 16px 28px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #ff4f9a, #b85cff);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(214, 51, 132, 0.3);
+    transition: 0.3s;
+}
+
+.opening-content button:hover {
+    transform: scale(1.08);
+}
+
+.tap-text {
+    font-size: 13px !important;
+    margin-top: 18px;
+    opacity: 0.7;
+}
+
+@keyframes openingPop {
+    from {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes crownBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    margin-top: 45px;
+    font-size: 16px;
+    color: #82405c;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px) {
+
+    .baby-photo {
+        width: 220px;
+        height: 260px;
+    }
+
+    .clock-box {
+        width: 160px;
+        height: 160px;
+    }
+
+    .info-card {
+        padding: 18px;
+    }
+
+    .birthday-card {
+        padding: 18px;
+    }
+
+    .message {
+        font-size: 16px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+    
+    <div id="openingScreen">
+        <div class="opening-content">
+            <div class="opening-crown">👑</div>
+
+            <h1>A Little Surprise For You 💖</h1>
+
+            <p>From your Bua, with lots of love 🎀</p>
+
+            <button onclick="startSurprise()">
+                🎁 Open Your Surprise 🎁
+            </button>
+
+            <p class="tap-text">
+                Tap to enter your magical birthday world ✨
+            </p>
+        </div>
+    </div>
+
+
+    <!-- 👇 Iske neeche tumhara existing website code rahega -->
+    
+    
+
+    <!-- baaki tumhara code... -->
+
+
+</body>
+
+<audio id="birthdayMusic">
+    <source src="music/birthday-song.mp3" type="audio/mpeg">
+</audio>
+
+<!-- =========================
+     FLOATING DECORATIONS
+========================= -->
+
+<div class="floating" style="left:5%; animation-duration:10s;">🎈</div>
+<div class="floating" style="left:15%; animation-duration:13s;">💖</div>
+<div class="floating" style="left:28%; animation-duration:9s;">🌸</div>
+<div class="floating" style="left:40%; animation-duration:12s;">🎈</div>
+<div class="floating" style="left:55%; animation-duration:11s;">💕</div>
+<div class="floating" style="left:70%; animation-duration:14s;">🌷</div>
+<div class="floating" style="left:82%; animation-duration:10s;">🎈</div>
+<div class="floating" style="left:92%; animation-duration:12s;">✨</div>
+
+
+<div class="container">
+
+
+<!-- =========================
+     TITLE
+========================= -->
+
+<div class="top-title">
+
+    <div class="small-line">
+        A LITTLE SURPRISE FROM BUA
+    </div>
+
+    <h1>
+        👑 Vedika Chaudhary 👑
+    </h1>
+
+    <div class="subtitle">
+        My Little Princess is Turning ONE 🎂
+    </div>
+
+</div>
+
+
+<!-- =========================
+     BABY PHOTO
+========================= -->
+
+<div class="photo-area">
+
+    <img
+        src="vedika.png"
+        alt="Vedika Chaudhary"
+        class="baby-photo"
+    >
+
+</div>
+
+
+<!-- =========================
+     INFORMATION
+========================= -->
+
+<div class="info-card">
+
+    <h2>
+        💕 My Little Girl 💕
+    </h2>
+
+    <div class="dob">
+        🎂 09 October 2025
+    </div>
+
+    <div class="bua-line">
+        With all the love in the world,
+        from your Bua ❤️
+    </div>
+
+</div>
+
+
+<!-- =========================
+     LIVE WATCH
+========================= -->
+
+<div class="clock-box">
+
+    <div class="clock-number n12">12</div>
+    <div class="clock-number n3">3</div>
+    <div class="clock-number n6">6</div>
+    <div class="clock-number n9">9</div>
+
+    <div
+        class="hand hour-hand"
+        id="hourHand">
+    </div>
+
+    <div
+        class="hand minute-hand"
+        id="minuteHand">
+    </div>
+
+    <div
+        class="hand second-hand"
+        id="secondHand">
+    </div>
+
+    <div class="clock-center"></div>
+
+</div>
+
+<div
+    class="digital-time"
+    id="digitalTime">
+    00:00:00
+</div>
+
+
+<!-- =========================
+     SURPRISE
+========================= -->
+
+<div>
+
+    <button
+        class="surprise-button"
+        onclick="openSurprise()">
+
+        🎁 Click To Open Your Surprise 🎀
+
+    </button>
+
+</div>
+
+
+<!-- =========================
+     SURPRISE CARD
+========================= -->
+
+<div
+    class="card-wrapper"
+    id="surpriseCard">
+
+    <div class="birthday-card">
+
+        <img
+            src="vedika.png"
+            alt="Vedika"
+            class="card-photo"
+        >
+
+        <h2>
+            💌 For My Beautiful Vedika 💌
+        </h2>
+
+        <div class="message">
+
+            Meri pyari si Vedika... 🥹💕
+
+            <br><br>
+
+            Tum meri sirf bhatiji nahi ho,
+            tum meri <b>beti jaisi ho</b>.
+            ❤️
+
+            <br><br>
+
+            Tumhari ek chhoti si smile
+            Bua ka poora din beautiful
+            bana deti hai. 🌸
+
+            <br><br>
+
+            Jab tum hasti ho,
+            to aisa lagta hai jaise
+            poori duniya khush ho gayi ho. ✨
+
+            <br><br>
+
+            Bua hamesha tumhare saath
+            rahegi — tumhari har smile,
+            har little achievement aur
+            har beautiful moment ko
+            celebrate karne ke liye. 🥹🎀
+
+            <br><br>
+
+            May you always be happy,
+            healthy and surrounded by
+            lots and lots of love. 👑
+
+        </div>
+
+
+        <div class="signature">
+
+            ❤️ Lots of Love,<br>
+            Your Bua ❤️
+
+        </div>
+
+
+        <br>
+
+
+        <!-- SECRET -->
+
+        <button
+            class="secret-button"
+            onclick="openSecret()">
+
+            🔐 One Secret For You
+
+        </button>
+
+
+        <div
+            class="secret-message"
+            id="secretMessage">
+
+            🤫 <b>Secret Message...</b>
+
+            <br><br>
+
+            Vedika, jab tum badi hokar
+            ye page dekhogi na,
+            tab shayad tumhe yaad bhi
+            nahi hoga ki Bua tumhe
+            kitna pyaar karti thi...
+
+            <br><br>
+
+            Isliye ye chhota sa message
+            tumhare liye save kar diya. 💕
+
+            <br><br>
+
+            <b>
+                Tum hamesha Bua ki
+                little princess rahogi. 👑
+            </b>
+
+            <br><br>
+
+            Happy 1st Birthday,
+            meri gudiya! 🎂🎀
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="footer">
+
+    Made with endless love by Bua ❤️
+
+</div>
+
+
+</div>
+
+
+<script>
+
+/* =========================
+   REAL TIME CLOCK
+========================= */
+
+function updateClock() {
+
+    const now = new Date();
+
+    const seconds = now.getSeconds();
+
+    const minutes = now.getMinutes();
+
+    const hours = now.getHours();
+
+
+    const secondAngle =
+        seconds * 6;
+
+    const minuteAngle =
+        minutes * 6 +
+        seconds * 0.1;
+
+    const hourAngle =
+        (hours % 12) * 30 +
+        minutes * 0.5;
+
+
+    document.getElementById(
+        "secondHand"
+    ).style.transform =
+        `translateX(-50%) rotate(${secondAngle}deg)`;
+
+
+    document.getElementById(
+        "minuteHand"
+    ).style.transform =
+        `translateX(-50%) rotate(${minuteAngle}deg)`;
+
+
+    document.getElementById(
+        "hourHand"
+    ).style.transform =
+        `translateX(-50%) rotate(${hourAngle}deg)`;
+
+
+    let h =
+        String(hours).padStart(2, "0");
+
+    let m =
+        String(minutes).padStart(2, "0");
+
+    let s =
+        String(seconds).padStart(2, "0");
+
+
+    document.getElementById(
+        "digitalTime"
+    ).innerText =
+        `${h}:${m}:${s}`;
+}
+
+
+setInterval(updateClock, 1000);
+
+updateClock();
+function startSurprise() {
+    document.getElementById("openingScreen").style.display = "none";
+
+    const music = document.getElementById("birthdayMusic");
+
+    music.play()
+        .then(() => {
+            console.log("Song playing");
+        })
+        .catch((error) => {
+            console.log("Song error:", error);
+        });
+}
+
+
+/* =========================
+   SURPRISE CARD
+========================= */
+
+function openSurprise() {
+    document.getElementById("surpriseCard").style.display = "block";
+    document.getElementById("surpriseCard").scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
+}
+
+
+/* =========================
+   SURPRISE CARD
+========================= */
+
+function openSurprise() {
+    document.getElementById("surpriseCard").style.display = "block";
+    document.getElementById("surpriseCard").scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
+
+    document.getElementById("birthdayMusic").play();
+}
+
+
+/* =========================
+   SECRET MESSAGE
+========================= */
+
+function openSecret() {
+
+    const message =
+        document.getElementById(
+            "secretMessage"
+        );
+
+    if (
+        message.style.display ===
+        "block"
+    ) {
+
+        message.style.display =
+            "none";
+
+    } else {
+
+        message.style.display =
+            "block";
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
